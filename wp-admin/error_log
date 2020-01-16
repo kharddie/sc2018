@@ -1,0 +1,16 @@
+[18-Dec-2019 01:55:18 UTC] WordPress database error Deadlock found when trying to get lock; try restarting transaction for query UPDATE wp_posts as pt JOIN (
+                  SELECT ID, (@row_number:=@row_number + 1) AS `rank`
+                  FROM wp_posts
+                  WHERE post_type = 'property' AND post_status IN ( 'publish', 'pending', 'draft', 'private', 'future' )
+                  ORDER BY menu_order ASC
+                ) as pt2
+                ON pt.id = pt2.id
+                SET pt.menu_order = pt2.`rank`; made by do_action('admin_init'), WP_Hook->do_action, WP_Hook->apply_filters, SCPO_Engine->refresh
+[18-Dec-2019 03:30:08 UTC] WordPress database error Deadlock found when trying to get lock; try restarting transaction for query UPDATE wp_posts as pt JOIN (
+                  SELECT ID, (@row_number:=@row_number + 1) AS `rank`
+                  FROM wp_posts
+                  WHERE post_type = 'property' AND post_status IN ( 'publish', 'pending', 'draft', 'private', 'future' )
+                  ORDER BY menu_order ASC
+                ) as pt2
+                ON pt.id = pt2.id
+                SET pt.menu_order = pt2.`rank`; made by do_action('admin_init'), WP_Hook->do_action, WP_Hook->apply_filters, SCPO_Engine->refresh

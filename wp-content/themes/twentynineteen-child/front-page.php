@@ -17,9 +17,6 @@
 
 get_header();
 
-
-
-
 ?>
 
 <script>
@@ -28,27 +25,7 @@ get_header();
 
 <?php
 
-function substrwords($text, $maxchar, $end = '...')
-{
-    if (strlen($text) > $maxchar || $text == '') {
-        $words = preg_split('/\s/', $text);
-        $output = '';
-        $i      = 0;
-        while (1) {
-            $length = strlen($output) + strlen($words[$i]);
-            if ($length > $maxchar) {
-                break;
-            } else {
-                $output .= " " . $words[$i];
-                ++$i;
-            }
-        }
-        $output .= $end;
-    } else {
-        $output = $text;
-    }
-    return $output;
-}
+
 
 
 
@@ -57,31 +34,31 @@ function get_month()
     $month = date('m');
     $monthName = '';
     if ($month == 1) {
-        $monthName = "December";
+        $monthName = "January";
     }
     if ($month == 2) {
-        $monthName = "December";
+        $monthName = "February";
     }
     if ($month == 3) {
-        $monthName = "December";
+        $monthName = "March";
     }
     if ($month == 4) {
-        $monthName = "December";
+        $monthName = "April";
     }
     if ($month == 5) {
-        $monthName = "December";
+        $monthName = "May";
     }
     if ($month == 6) {
-        $monthName = "December";
+        $monthName = "June";
     }
     if ($month == 7) {
-        $monthName = "December";
+        $monthName = "July";
     }
     if ($month == 8) {
-        $monthName = "December";
+        $monthName = "August";
     }
     if ($month == 9) {
-        $monthName = "December";
+        $monthName = "September";
     }
     if ($month == 10) {
         $monthName = "October";
@@ -96,44 +73,64 @@ function get_month()
     return  $monthName;
 }
 
+//query front page videos
+$the_query = new WP_Query(
+    array(
+        'post_type' => 'Our_videos',
+        'post_status' => 'publish',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        //Filter taxonomies by terms
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'classification',
+                'terms' => 123,
+                'field' => 'term_id'
+            )
+        )
+    )
+);
 
-//    SELECT * FROM `wp_posts` WHERE post_type='our_videos' and post_status='publish' order by menu_order asc
-$featuredVideos = array();
-$qry = $wpdb->get_results("select * from $wpdb->posts where post_type='our_videos' and post_status='publish' order by menu_order asc");
-foreach ($qry as $row) {
-    $ID = $row->ID;
-    $post_title = $row->post_title;
-    $featured_video = get_field('featured_video', $ID);
-    $video_id = get_field('video_id', $ID);
-    $video_title = get_field('video_title', $ID);
-    $start_second = get_field('start_second', $ID);
-    $end_seconds = get_field('end_seconds', $ID);
-    $suggested_video_quality = get_field('suggested_video_quality', $ID);
 
-    $cost_of_property = number_format(get_field('cost_of_property', $ID));
 
-    $status = get_field('status', $ID);
 
-    //  echo 'cost_of_property=' . $cost_of_property . '<br>';
-    //  echo 'ID=' . $ID . '<br>';
-    //  echo 'post_title=' . $post_title . '<br>';
-    // echo 'featured_video.=' . $featured_video . '<br>';
-    // echo 'video_title=' . substrwords($video_title ,30). '<br>'; 
-    // echo 'video_id=' . $video_id . '<br>';
-    // echo 'start_second=' . $start_second . '<br>';
-    //  echo 'end_seconds=' . $end_seconds . '<br>';
-    //  echo 'suggested_video_quality=' . $suggested_video_quality . '<br>';
+if ($the_query->have_posts()) : ?>
+    <!-- the loop -->
+    <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+        <?php
+        $ID = get_the_id();
+        $post_title = get_the_title();
+        $post_date = get_the_date('l F j, Y');
+        $featured_video = get_field('featured_video', $ID);
+        $video_id = get_field('video_id', $ID);
+        $video_title = get_field('video_title', $ID);
+        $start_second = get_field('start_second', $ID);
+        $end_seconds = get_field('end_seconds', $ID);
+        $suggested_video_quality = get_field('suggested_video_quality', $ID);
+        $cost_of_property = number_format(get_field('cost_of_property', $ID));
+        $status = get_field('status', $ID);
 
-    if ($status == "Sold") {
-        $status = "SOLD";
-    } else {
-        $status = "";
-    }
+        if ($start_second == '') {
+            $start_second = 0;
+        }
+        if ($end_seconds == '') {
+            $end_seconds = 0;
+        }
 
-    //  echo 'cost_of_property=' . $cost_of_property . '<br>';
-    // echo 'status=' . $status . '<br>';
+        /*
+  echo 'cost_of_property=' . $cost_of_property . '<br>';
+  echo 'ID=' . $ID . '<br>';
+  echo 'post_title=' . $post_title . '<br>';
+ echo 'featured_video.=' . $featured_video . '<br>';
+ echo 'video_title=' . substrwords($video_title ,30). '<br>'; 
+ echo 'video_id=' . $video_id . '<br>';
+ echo 'start_second=' . $start_second . '<br>';
+  echo 'end_seconds=' . $end_seconds . '<br>';
+  echo 'suggested_video_quality=' . $suggested_video_quality . '<br>';
+*/
 
-    if ($featured_video == "Yes") { ?>
+        ?>
+
         <script>
             var tempObj = {
                 'videoId': '<?php echo $video_id; ?>',
@@ -147,13 +144,19 @@ foreach ($qry as $row) {
             }
             vidHolder.push(tempObj);
         </script>
-<?php
-                                    }
 
-                                    // echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
-                                }
+    <?php endwhile; ?>
+    <!-- end of the loop -->
 
-?>
+
+
+    <?php wp_reset_postdata(); ?>
+<?php else : ?>
+    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+<?php endif; ?>
+
+
+
 <section id="primary" class="content-area">
     <main id="main" class="site-main">
         <div class="home-page">
@@ -179,22 +182,22 @@ foreach ($qry as $row) {
                         </div>
                         <div class="home-content">
                             <?php
-                                        if (have_posts()) {
+                            if (have_posts()) {
 
-                                            // Load posts loop.
-                                            while (have_posts()) {
-                                                the_post();
-                                                //get_template_part( 'template-parts/content/content' );
-                                                the_content();
-                                            }
+                                // Load posts loop.
+                                while (have_posts()) {
+                                    the_post();
+                                    //get_template_part( 'template-parts/content/content' );
+                                    the_content();
+                                }
 
-                                            // Previous/next page navigation.
-                                            twentynineteen_the_posts_navigation();
-                                        } else {
+                                // Previous/next page navigation.
+                                twentynineteen_the_posts_navigation();
+                            } else {
 
-                                            // If no content, include the "No posts found" template.
-                                            get_template_part('template-parts/content/content', 'none');
-                                        }
+                                // If no content, include the "No posts found" template.
+                                get_template_part('template-parts/content/content', 'none');
+                            }
                             ?>
                         </div>
                         <div class="cover">
@@ -442,4 +445,4 @@ foreach ($qry as $row) {
     })
 </script>
 <?php
-                                                                                                                                                    get_footer();
+get_footer();

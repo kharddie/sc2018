@@ -16,12 +16,22 @@
 <html <?php language_attributes(); ?>>
 
 <head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PTH45QC');</script>
+<!-- End Google Tag Manager -->
+
+
     <meta charset="<?php bloginfo('charset'); ?>" />
     <!-- <meta name="viewport" content="width=device-width, initial-scale=0" /> -->
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
     <link rel="profile" href="https://gmpg.org/xfn/11" />
     <?php wp_head(); ?>
-    <link href="<?php echo get_home_url(); ?>/wp-content/themes/twentynineteen-child/style-dev.css?<?php echo time(); ?>" rel="stylesheet" type="text/css">
+    <!--<link href="<?php echo get_home_url(); ?>/wp-content/themes/twentynineteen-child/style-dev.css?<?php echo time(); ?>" rel="stylesheet" type="text/css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <?php $postid = $post->ID; ?>
@@ -34,6 +44,16 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
+
+
+
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTH45QC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
 
     <div id="overlay-loading">
         <div id="overlay-inner">

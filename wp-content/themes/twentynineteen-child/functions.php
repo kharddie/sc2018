@@ -148,6 +148,72 @@ function custom_post_type_exclusive_homes()
 
 add_action('init', 'custom_post_type_exclusive_homes', 0);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Add custom taxonomies
+ *
+ * Additional custom taxonomies can be defined here
+ */
+
+//hook into the init action and call create_book_taxonomies when it fires
+add_action('init', 'create_classification_hierarchical_taxonomy', 0);
+
+function create_classification_hierarchical_taxonomy()
+{
+
+    // Add new taxonomy, make it hierarchical like categories
+    //first do the translations part for GUI
+
+    $labels = array(
+        'name' => _x('Classification', 'taxonomy general name'),
+        'singular_name' => _x('Classification', 'taxonomy singular name'),
+        'search_items' => __('Search Classification'),
+        'all_items' => __('All Classification'),
+        'parent_item' => __('Parent Classification'),
+        'parent_item_colon' => __('Parent Classification:'),
+        'edit_item' => __('Edit Classification'),
+        'update_item' => __('Update Classification'),
+        'add_new_item' => __('Add New Classification'),
+        'new_item_name' => __('New Classification Name'),
+        'menu_name' => __('Classification'),
+    );
+
+    // Now register the taxonomy
+
+    register_taxonomy('classification', 'Our_videos', array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'classification'),
+    ));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
  * Creating a function to create our CPT VIDEOS Videos
  */
@@ -181,7 +247,7 @@ function custom_post_type_our_video()
         // Features this CPT supports in Post Editor
         'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields'),
         // You can associate this CPT with a taxonomy or custom taxonomy.
-        'taxonomies' => array('genres', 'category'),
+        'taxonomies' => array('genres', 'category','classification'),
         /* A hierarchical CPT is like Pages and can have
          * Parent and child items. A non-hierarchical CPT
          * is like Posts.
@@ -210,6 +276,21 @@ function custom_post_type_our_video()
  */
 
 add_action('init', 'custom_post_type_our_video', 0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
  * Creating a function to create our CPT EARNED MEDIA Media
@@ -462,10 +543,10 @@ function my_epl_property_icons()
     global $property;
     echo '<ul class="epl-property-icons">';
     echo $property->get_property_bed('l') .
-    $property->get_property_bath('l') .
-    $property->get_property_parking('l') .
-    $property->get_property_air_conditioning('l') .
-    $property->get_property_pool('l');
+        $property->get_property_bath('l') .
+        $property->get_property_parking('l') .
+        $property->get_property_air_conditioning('l') .
+        $property->get_property_pool('l');
     echo '</ul>';
 }
 add_action('epl_property_icons', 'my_epl_property_icons');
@@ -611,42 +692,144 @@ function custom_post_type_earnedMedia()
 add_action('init', 'custom_post_type_earnedMedia', 0);
 
 // Add a Custom Incremental Class
-function custom_nav_class($classes, $item){
-	global $post;
-	$classes[] = "custom-class-".$item->menu_order;
-	return $classes;
+function custom_nav_class($classes, $item)
+{
+    global $post;
+    $classes[] = "custom-class-" . $item->menu_order;
+    return $classes;
 }
-add_filter('nav_menu_css_class' , 'custom_nav_class' , 10 , 2);
+add_filter('nav_menu_css_class', 'custom_nav_class', 10, 2);
 
 
 
 
 
 //Excluding Sold and Leased from Property Loop pre_get_posts
-function my_property_filter($query) {
-	// Do nothing if is dashboard/admin or doing search
-	if ( is_admin() || epl_is_search() )
-		return;
+function my_property_filter($query)
+{
+    // Do nothing if is dashboard/admin or doing search
+    if (is_admin() || epl_is_search())
+        return;
 
-	// The query to only show 'current' listings
-	$meta_query = array(
-		array(
-			'key'=>'property_status',
-			'value'=>'current',
-			'compare'=>'==',
-		),
-	);
+    // The query to only show 'current' listings
+    $meta_query = array(
+        array(
+            'key' => 'property_status',
+            'value' => 'current',
+            'compare' => '==',
+        ),
+    );
 
-	// Only show current listings on your main /property/ page
-	if ( $query->is_main_query() && is_post_type_archive( 'property' ) ) {
-		$query->set('meta_query',$meta_query);
-        	return;
-	}
+    // Only show current listings on your main /property/ page
+    if ($query->is_main_query() && is_post_type_archive('property')) {
+        $query->set('meta_query', $meta_query);
+        return;
+    }
 
-	// Only show current listings on your main /rental/ page
-	if ( $query->is_main_query() && is_post_type_archive( 'rental' ) ) {
-		$query->set('meta_query',$meta_query);
-        	return;
-	}
+    // Only show current listings on your main /rental/ page
+    if ($query->is_main_query() && is_post_type_archive('rental')) {
+        $query->set('meta_query', $meta_query);
+        return;
+    }
 }
-add_action( 'pre_get_posts', 'my_property_filter' , 20  );
+add_action('pre_get_posts', 'my_property_filter', 20);
+
+
+
+
+function substrwords($text, $maxchar, $end = '...')
+{
+    if (strlen($text) > $maxchar || $text == '') {
+        $words = preg_split('/\s/', $text);
+        $output = '';
+        $i      = 0;
+        while (1) {
+            $length = strlen($output) + strlen($words[$i]);
+            if ($length > $maxchar) {
+                break;
+            } else {
+                $output .= " " . $words[$i];
+                ++$i;
+            }
+        }
+        $output .= $end;
+    } else {
+        $output = $text;
+    }
+    return $output;
+}
+
+
+
+//Adding a Taxonomy Filter to Admin List for a Custom Post Type
+//developments CPT
+add_action( 'restrict_manage_posts', 'filter_backend_by_taxonomies' , 99, 2);
+/* Filter CPT via Custom Taxonomy */
+/* https://generatewp.com/filtering-posts-by-taxonomies-in-the-dashboard/ */
+
+
+function filter_backend_by_taxonomies( $post_type, $which ) {
+// Apply this to a specific CPT
+if ( 'developments' !== $post_type )
+    return;
+// A list of custom taxonomy slugs to filter by
+$taxonomies = array( 'status' );
+foreach ( $taxonomies as $taxonomy_slug ) {
+    // Retrieve taxonomy data
+    $taxonomy_obj = get_taxonomy( $taxonomy_slug );
+    $taxonomy_name = $taxonomy_obj->labels->name;
+    // Retrieve taxonomy terms
+    $terms = get_terms( $taxonomy_slug );
+    // Display filter HTML
+    echo "<select name='{$taxonomy_slug}' id='{$taxonomy_slug}' class='postform'>";
+    echo '<option value="">' . sprintf( esc_html__( 'Show All %s', 'text_domain' ), $taxonomy_name ) . '</option>';
+    foreach ( $terms as $term ) {
+        printf(
+            '<option value="%1$s" %2$s>%3$s (%4$s)</option>',
+            $term->slug,
+            ( ( isset( $_GET[$taxonomy_slug] ) && ( $_GET[$taxonomy_slug] == $term->slug ) ) ? ' selected="selected"' : '' ),
+            $term->name,
+            $term->count
+        );
+    }
+    echo '</select>';
+}
+}
+
+
+
+
+//Adding a Taxonomy Filter to Admin List for a Custom Post Type
+//our_videos CPT
+add_action( 'restrict_manage_posts', 'filter_backend_by_taxonomies_v' , 99, 2);
+/* Filter CPT via Custom Taxonomy */
+/* https://generatewp.com/filtering-posts-by-taxonomies-in-the-dashboard/ */
+
+
+function filter_backend_by_taxonomies_v( $post_type, $which ) {
+// Apply this to a specific CPT
+if ( 'our_videos' !== $post_type )
+    return;
+// A list of custom taxonomy slugs to filter by
+$taxonomies = array( 'classification' );
+foreach ( $taxonomies as $taxonomy_slug ) {
+    // Retrieve taxonomy data
+    $taxonomy_obj = get_taxonomy( $taxonomy_slug );
+    $taxonomy_name = $taxonomy_obj->labels->name;
+    // Retrieve taxonomy terms
+    $terms = get_terms( $taxonomy_slug );
+    // Display filter HTML
+    echo "<select name='{$taxonomy_slug}' id='{$taxonomy_slug}' class='postform'>";
+    echo '<option value="">' . sprintf( esc_html__( 'Show All %s', 'text_domain' ), $taxonomy_name ) . '</option>';
+    foreach ( $terms as $term ) {
+        printf(
+            '<option value="%1$s" %2$s>%3$s (%4$s)</option>',
+            $term->slug,
+            ( ( isset( $_GET[$taxonomy_slug] ) && ( $_GET[$taxonomy_slug] == $term->slug ) ) ? ' selected="selected"' : '' ),
+            $term->name,
+            $term->count
+        );
+    }
+    echo '</select>';
+}
+}

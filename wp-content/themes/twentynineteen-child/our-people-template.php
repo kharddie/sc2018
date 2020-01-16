@@ -95,9 +95,9 @@ $post_id = filter_input(INPUT_GET, 'pid');
 
                                 //SHOW BIO
                                 if ($show_staff_bio == "Yes") {
-                                    $display_bio = '<a href="' . site_url() . '/our-people/?pid=' .  $row->ID . '" class="img-hover-zoom img-hover-zoom--basic" style="display:block;"><img class="dont-lazy-load" src="' . $photoUrl . '"/></a>';
+                                    $display_bio = '<a href="' . site_url() . '/our-people/?pid=' .  $row->ID . '" class="img-hover-zoom img-hover-zoom--basic" style="display:block;cursor: pointer;"><img class="dont-lazy-load" src="' . $photoUrl . '"/></a>';
                                 } else {
-                                    $display_bio = '<a class="img-hover-zoom img-hover-zoom--basic" style="display:block;cursor: auto;"><img class="dont-lazy-load" src="' . $photoUrl . '" /></a>';
+                                    $display_bio = '<a class="img-hover-zoom img-hover-zoom--basic no-staff-bio" style="display:block;"><img class="dont-lazy-load" src="' . $photoUrl . '" /></a>';
                                 }
                                 ?>
                             <div class="our-people" data-aos="fade-up">

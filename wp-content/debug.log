@@ -1,0 +1,9 @@
+[08-Jan-2020 17:47:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getWorksheets() on null in /home/simoncau/public_html/wp-content/plugins/cf7-google-sheets-connector/lib/google-sheets.php:78
+Stack trace:
+#0 /home/simoncau/public_html/wp-content/plugins/cf7-google-sheets-connector/includes/class-gs-service.php(175): cf7gsc_googlesheet->add_row(Array)
+#1 /home/simoncau/public_html/wp-includes/class-wp-hook.php(288): Gs_Connector_Service->cf7_save_to_google_sheets(Object(WPCF7_ContactForm))
+#2 /home/simoncau/public_html/wp-includes/class-wp-hook.php(312): WP_Hook->apply_filters('', Array)
+#3 /home/simoncau/public_html/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#4 /home/simoncau/public_html/wp-content/plugins/contact-form-7/includes/submission.php(214): do_action('wpcf7_mail_sent', Object(WPCF7_ContactForm))
+#5 /home/simoncau/public_html/wp-content/plugins/contact-form-7/includes/submission.php(34): WPCF7_Submission->submit()
+#6 /home/simoncau/public_html/wp-content/plugins/contact-form-7/includes/contact-form.php(740): WPC in /home/simoncau/public_html/wp-content/plugins/cf7-google-sheets-connector/lib/google-sheets.php on line 78

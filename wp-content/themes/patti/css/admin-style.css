@@ -1,0 +1,14 @@
+/*CSS for admin area*/
+
+html .wpb_content_element > .wpb_element_wrapper {
+	border: 1px solid #efefef;
+}
+
+.update-nag.bsf-update-nag {
+	display: none !important;
+}
+
+div[data-vc-shortcode="vc_row"] .vc_panel-tabs > .vc_edit-form-tabs-menu .vc_edit-form-tab-control:nth-child(2),
+div[data-vc-shortcode="vc_row"] .vc_panel-tabs > .vc_edit-form-tabs-menu .vc_edit-form-tab-control:nth-child(3) {
+	display: none;
+}

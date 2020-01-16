@@ -1,0 +1,650 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EPL - Sliders 2.1\n"
+"POT-Creation-Date: 2018-12-05 14:02+0100\n"
+"PO-Revision-Date: 2018-12-05 14:02+0100\n"
+"Last-Translator: Merv Barrett <support@realestateconnected.com.au>\n"
+"Language-Team: Easy Property Listings <support@easypropertylistings.com.au>\n"
+"Language: en_AU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x;_n;_ex\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: epl-sliders.php:94
+msgid ""
+"Please activate <b>Easy Property Listings</b> to enable all functions of EPL "
+"- Sliders"
+msgstr ""
+
+#: includes/admin-hooks.php:62
+msgid "Sliders"
+msgstr ""
+
+#: includes/admin-hooks.php:65
+msgid "Settings"
+msgstr ""
+
+#: includes/admin-hooks.php:71
+msgid ""
+"The settings below adjust the basic configuration options for the slider "
+"display."
+msgstr ""
+
+#: includes/admin-hooks.php:77 includes/admin-hooks.php:319
+msgid "Width"
+msgstr ""
+
+#: includes/admin-hooks.php:80
+msgid ""
+"Slider container width in pixels, leave blank for auto width. Setting a "
+"width is optimal."
+msgstr ""
+
+#: includes/admin-hooks.php:85 includes/admin-hooks.php:327
+msgid "Height"
+msgstr ""
+
+#: includes/admin-hooks.php:88
+msgid ""
+"Slider container height in pixels, leave blank for auto height. Setting a "
+"height is optimal."
+msgstr ""
+
+#: includes/admin-hooks.php:94 includes/admin-hooks.php:376
+msgid "Transition speed in milliseconds"
+msgstr ""
+
+#: includes/admin-hooks.php:97
+msgid "Navigation speed between slides and slideshow transition effect."
+msgstr ""
+
+#: includes/admin-hooks.php:102
+msgid "Include Featured Image in Slider?"
+msgstr ""
+
+#: includes/admin-hooks.php:105 includes/admin-hooks.php:117
+#: includes/admin-hooks.php:137 includes/admin-hooks.php:149
+#: includes/admin-hooks.php:180 includes/admin-hooks.php:191
+#: includes/admin-hooks.php:228 includes/admin-hooks.php:268
+#: includes/admin-hooks.php:366 includes/admin-hooks.php:453
+#: includes/admin-hooks.php:476 includes/admin-hooks.php:528
+#: includes/admin-hooks.php:563
+msgid "Enable"
+msgstr ""
+
+#: includes/admin-hooks.php:106 includes/admin-hooks.php:118
+#: includes/admin-hooks.php:138 includes/admin-hooks.php:150
+#: includes/admin-hooks.php:181 includes/admin-hooks.php:192
+#: includes/admin-hooks.php:215 includes/admin-hooks.php:229
+#: includes/admin-hooks.php:269 includes/admin-hooks.php:367
+#: includes/admin-hooks.php:452 includes/admin-hooks.php:475
+#: includes/admin-hooks.php:503 includes/admin-hooks.php:529
+#: includes/admin-hooks.php:564
+msgid "Disable"
+msgstr ""
+
+#: includes/admin-hooks.php:109
+msgid "Disable if you do not want to show feature image in slider."
+msgstr ""
+
+#: includes/admin-hooks.php:114
+msgid "Lazy load images?"
+msgstr ""
+
+#: includes/admin-hooks.php:121
+msgid "Dynamic image loading, improves page loading speed."
+msgstr ""
+
+#: includes/admin-hooks.php:126
+msgid "Number of images to Lazy Load"
+msgstr ""
+
+#: includes/admin-hooks.php:129
+msgid ""
+"If this value is 0, it will load current slide only. If this value is 1, it "
+"will load current slide and 1 adjacent slide."
+msgstr ""
+
+#: includes/admin-hooks.php:134
+msgid "Reverse Image Order?"
+msgstr ""
+
+#: includes/admin-hooks.php:141
+msgid "Use when importing listings and automatically generating sliders."
+msgstr ""
+
+#: includes/admin-hooks.php:146
+msgid "Image cropping?"
+msgstr ""
+
+#: includes/admin-hooks.php:153
+msgid ""
+"Crops each slider image based on assigned width & height. Disable if images "
+"are about right size."
+msgstr ""
+
+#: includes/admin-hooks.php:157
+msgid "Crop Alignment"
+msgstr ""
+
+#: includes/admin-hooks.php:160
+msgid "Center"
+msgstr ""
+
+#: includes/admin-hooks.php:161
+msgid "Top"
+msgstr ""
+
+#: includes/admin-hooks.php:162
+msgid "Bottom"
+msgstr ""
+
+#: includes/admin-hooks.php:165
+msgid "Images will be cropped from top / bottom / center."
+msgstr ""
+
+#: includes/admin-hooks.php:169
+msgid "Crop Quality"
+msgstr ""
+
+#: includes/admin-hooks.php:172
+msgid "Image quality of cropped images, 100 is best 0 is worst."
+msgstr ""
+
+#: includes/admin-hooks.php:177
+msgid "Show lightbox popout when clicked?"
+msgstr ""
+
+#: includes/admin-hooks.php:188 includes/admin-hooks.php:560
+msgid "Show listing status sticker?"
+msgstr ""
+
+#: includes/admin-hooks.php:200
+msgid "Navigation"
+msgstr ""
+
+#: includes/admin-hooks.php:205
+msgid "The settings below adjust the slider arrow options."
+msgstr ""
+
+#: includes/admin-hooks.php:212
+msgid "Show Slider Arrows?"
+msgstr ""
+
+#: includes/admin-hooks.php:216
+msgid "On Mouse Hover"
+msgstr ""
+
+#: includes/admin-hooks.php:217
+msgid "Always"
+msgstr ""
+
+#: includes/admin-hooks.php:225
+msgid "Allow slider control using keyboard."
+msgstr ""
+
+#: includes/admin-hooks.php:236
+msgid "Navigation Arrow Style."
+msgstr ""
+
+#: includes/admin-hooks.php:245
+msgid "Arrow Styles Preview."
+msgstr ""
+
+#: includes/admin-hooks.php:253
+msgid "Thumbnails"
+msgstr ""
+
+#: includes/admin-hooks.php:258
+msgid "The settings below adjust the thumbnail options for the slider."
+msgstr ""
+
+#: includes/admin-hooks.php:265
+msgid "Show Thumbnails?"
+msgstr ""
+
+#: includes/admin-hooks.php:277
+msgid "Thumbnail Orientation"
+msgstr ""
+
+#: includes/admin-hooks.php:280 includes/admin-hooks.php:505
+msgid "Vertical"
+msgstr ""
+
+#: includes/admin-hooks.php:281 includes/admin-hooks.php:504
+msgid "Horizontal"
+msgstr ""
+
+#: includes/admin-hooks.php:288
+msgid "Thumbnail Lanes"
+msgstr ""
+
+#: includes/admin-hooks.php:291
+msgid "Two"
+msgstr ""
+
+#: includes/admin-hooks.php:292
+msgid "One"
+msgstr ""
+
+#: includes/admin-hooks.php:300
+msgid "Number of thumbnails to display"
+msgstr ""
+
+#: includes/admin-hooks.php:303
+msgid "1"
+msgstr ""
+
+#: includes/admin-hooks.php:304
+msgid "2"
+msgstr ""
+
+#: includes/admin-hooks.php:305
+msgid "3"
+msgstr ""
+
+#: includes/admin-hooks.php:306
+msgid "4"
+msgstr ""
+
+#: includes/admin-hooks.php:307
+msgid "5"
+msgstr ""
+
+#: includes/admin-hooks.php:308
+msgid "6"
+msgstr ""
+
+#: includes/admin-hooks.php:309
+msgid "7"
+msgstr ""
+
+#: includes/admin-hooks.php:310
+msgid "8"
+msgstr ""
+
+#: includes/admin-hooks.php:311
+msgid "9"
+msgstr ""
+
+#: includes/admin-hooks.php:312
+msgid "10"
+msgstr ""
+
+#: includes/admin-hooks.php:322
+msgid "Provide width in pixels, leave blank for default thumbnail size."
+msgstr ""
+
+#: includes/admin-hooks.php:330
+msgid "Provide height in pixels, leave blank for default thumbnail size."
+msgstr ""
+
+#: includes/admin-hooks.php:336
+msgid "Horizontal spacing in pixels"
+msgstr ""
+
+#: includes/admin-hooks.php:343
+msgid "Vertical spacing in pixels"
+msgstr ""
+
+#: includes/admin-hooks.php:351
+msgid "Slideshow"
+msgstr ""
+
+#: includes/admin-hooks.php:356
+msgid "The settings below adjust the slideshow options."
+msgstr ""
+
+#: includes/admin-hooks.php:363
+msgid "Auto play slideshow?"
+msgstr ""
+
+#: includes/admin-hooks.php:370
+msgid "Setup a slide show for the slider to animate automatically"
+msgstr ""
+
+#: includes/admin-hooks.php:384
+msgid "Slideshow transition effect"
+msgstr ""
+
+#: includes/admin-hooks.php:387
+msgid "Fade In Left"
+msgstr ""
+
+#: includes/admin-hooks.php:388
+msgid "Fade In Right"
+msgstr ""
+
+#: includes/admin-hooks.php:389
+msgid "Fade"
+msgstr ""
+
+#: includes/admin-hooks.php:390
+msgid "Fade in T"
+msgstr ""
+
+#: includes/admin-hooks.php:391
+msgid "Fade in B"
+msgstr ""
+
+#: includes/admin-hooks.php:392
+msgid "Fade in LR"
+msgstr ""
+
+#: includes/admin-hooks.php:393
+msgid "Fade in LR Chess"
+msgstr ""
+
+#: includes/admin-hooks.php:394
+msgid "Fade in TB"
+msgstr ""
+
+#: includes/admin-hooks.php:395
+msgid "Fade in TB Chess"
+msgstr ""
+
+#: includes/admin-hooks.php:396
+msgid "Fade in Corners"
+msgstr ""
+
+#: includes/admin-hooks.php:397
+msgid "Fade out L"
+msgstr ""
+
+#: includes/admin-hooks.php:398
+msgid "Fade out R"
+msgstr ""
+
+#: includes/admin-hooks.php:399
+msgid "Fade out T"
+msgstr ""
+
+#: includes/admin-hooks.php:400
+msgid "Fade out B"
+msgstr ""
+
+#: includes/admin-hooks.php:401
+msgid "Fade out LR"
+msgstr ""
+
+#: includes/admin-hooks.php:402
+msgid "Fade out LR Chess"
+msgstr ""
+
+#: includes/admin-hooks.php:403
+msgid "Fade out TB"
+msgstr ""
+
+#: includes/admin-hooks.php:404
+msgid "Fade out TB Chess"
+msgstr ""
+
+#: includes/admin-hooks.php:405
+msgid "Fade out Corners"
+msgstr ""
+
+#: includes/admin-hooks.php:406
+msgid "Fade Fly in L"
+msgstr ""
+
+#: includes/admin-hooks.php:407
+msgid "Fade Fly in R"
+msgstr ""
+
+#: includes/admin-hooks.php:408
+msgid "Fade Fly in T"
+msgstr ""
+
+#: includes/admin-hooks.php:409
+msgid "Fade Fly in B"
+msgstr ""
+
+#: includes/admin-hooks.php:410
+msgid "Fade Fly in LR"
+msgstr ""
+
+#: includes/admin-hooks.php:411
+msgid "Fade Fly in LR Chess"
+msgstr ""
+
+#: includes/admin-hooks.php:412
+msgid "Fade Fly in TB"
+msgstr ""
+
+#: includes/admin-hooks.php:413
+msgid "Fade Fly in TB Chess"
+msgstr ""
+
+#: includes/admin-hooks.php:414
+msgid "Fade Fly in Corners"
+msgstr ""
+
+#: includes/admin-hooks.php:415
+msgid "Fade Fly out L"
+msgstr ""
+
+#: includes/admin-hooks.php:416
+msgid "Fade Fly out R"
+msgstr ""
+
+#: includes/admin-hooks.php:417
+msgid "Fade Fly out TB"
+msgstr ""
+
+#: includes/admin-hooks.php:418
+msgid "Fade Fly out TB Chess"
+msgstr ""
+
+#: includes/admin-hooks.php:419
+msgid "Fade Fly out Corners"
+msgstr ""
+
+#: includes/admin-hooks.php:420
+msgid "Fade Clip in H"
+msgstr ""
+
+#: includes/admin-hooks.php:421
+msgid "Fade Clip in V"
+msgstr ""
+
+#: includes/admin-hooks.php:422
+msgid "Fade Clip out H"
+msgstr ""
+
+#: includes/admin-hooks.php:423
+msgid "Fade Clip out V"
+msgstr ""
+
+#: includes/admin-hooks.php:424
+msgid "Fade Stairs"
+msgstr ""
+
+#: includes/admin-hooks.php:425
+msgid "Fade Random"
+msgstr ""
+
+#: includes/admin-hooks.php:426
+msgid "Fade Swirl"
+msgstr ""
+
+#: includes/admin-hooks.php:427
+msgid "Fade ZigZag"
+msgstr ""
+
+#: includes/admin-hooks.php:428
+msgid "Zoom In"
+msgstr ""
+
+#: includes/admin-hooks.php:429
+msgid "Zoom Out"
+msgstr ""
+
+#: includes/admin-hooks.php:430 includes/admin-hooks.php:431
+msgid "Rotate Zoom In"
+msgstr ""
+
+#: includes/admin-hooks.php:432
+msgid "Hdouble Zoom In"
+msgstr ""
+
+#: includes/admin-hooks.php:433
+msgid "Hdouble Zoom Out"
+msgstr ""
+
+#: includes/admin-hooks.php:434
+msgid "Rotate Zoom In Left"
+msgstr ""
+
+#: includes/admin-hooks.php:435
+msgid "Rotate Zoom Out Right"
+msgstr ""
+
+#: includes/admin-hooks.php:436
+msgid "Rotate Zoom Out Left"
+msgstr ""
+
+#: includes/admin-hooks.php:437
+msgid "Rotate Zoom In Right"
+msgstr ""
+
+#: includes/admin-hooks.php:438
+msgid "Rotate Hdouble In"
+msgstr ""
+
+#: includes/admin-hooks.php:439
+msgid "Rotate Hdouble Out"
+msgstr ""
+
+#: includes/admin-hooks.php:440
+msgid "Rotate Vfork"
+msgstr ""
+
+#: includes/admin-hooks.php:441
+msgid "Rotate Hfork"
+msgstr ""
+
+#: includes/admin-hooks.php:449
+msgid "Pause slideshow on mouse hover?"
+msgstr ""
+
+#: includes/admin-hooks.php:461
+msgid "Mobile"
+msgstr ""
+
+#: includes/admin-hooks.php:466
+msgid ""
+"The settings below adjust configuration options for the slider display when "
+"viewed on a mobile device."
+msgstr ""
+
+#: includes/admin-hooks.php:472
+msgid "Thumbnails on mobile devices?"
+msgstr ""
+
+#: includes/admin-hooks.php:483
+msgid "Image Width"
+msgstr ""
+
+#: includes/admin-hooks.php:486
+msgid "Provide width in pixels, leave blank for auto width"
+msgstr ""
+
+#: includes/admin-hooks.php:491
+msgid "Image Height"
+msgstr ""
+
+#: includes/admin-hooks.php:494
+msgid "Provide height in pixels, leave blank for auto height"
+msgstr ""
+
+#: includes/admin-hooks.php:500
+msgid "Swipe to change slider?"
+msgstr ""
+
+#: includes/admin-hooks.php:506
+msgid "Both"
+msgstr ""
+
+#: includes/admin-hooks.php:514
+msgid "Listing Archive"
+msgstr ""
+
+#: includes/admin-hooks.php:519
+msgid ""
+"The settings below adjust the slider display when viewing your listings "
+"archive pages."
+msgstr ""
+
+#: includes/admin-hooks.php:525
+msgid "Use Slider on Archives"
+msgstr ""
+
+#: includes/admin-hooks.php:536
+msgid "Image size on Archives"
+msgstr ""
+
+#: includes/admin-hooks.php:544
+msgid "Slider Wrapper Width"
+msgstr ""
+
+#: includes/admin-hooks.php:547
+msgid "Slider wrapper width in pixels"
+msgstr ""
+
+#: includes/admin-hooks.php:552
+msgid "Slider Wrapper Height"
+msgstr ""
+
+#: includes/admin-hooks.php:555
+msgid "Slider wrapper height in pixels"
+msgstr ""
+
+#: includes/admin-hooks.php:709
+msgid "Slider Images - Easy Property Listings"
+msgstr ""
+
+#: includes/admin-hooks.php:748
+msgid "Reverse Image Order Enabled"
+msgstr ""
+
+#: includes/admin-hooks.php:778
+msgid "Add images to the slider using add media button."
+msgstr ""
+
+#: includes/admin-hooks.php:785
+msgid "Upload Images"
+msgstr ""
+
+#: includes/front-hooks.php:559
+msgid ""
+"No image editor could be selected. Please verify with your webhost that you "
+"have either the GD or Imagick image library compiled with your PHP install "
+"on your server."
+msgstr ""
+
+#: includes/front-hooks.php:661
+msgid "No image URL specified for cropping."
+msgstr ""
+
+#: includes/front-hooks.php:680
+msgid "No file could be found for the image URL specified."
+msgstr ""
+
+#: includes/front-hooks.php:688 includes/front-hooks.php:700
+msgid ""
+"The dimensions of the original image could not be retrieved for cropping."
+msgstr ""
+
+#: includes/front-hooks.php:1211
+msgid "Gallery"
+msgstr ""
+
+#: includes/front-hooks.php:1214
+msgid "Video"
+msgstr ""
